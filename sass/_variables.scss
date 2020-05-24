@@ -1,0 +1,42 @@
+/* Colors */
+
+$paragraph-color: #979797;
+$brand-main-color: #333333;
+$links-color : #56819f;
+$link-color-hover : #ffa200;
+
+/* Font sizes */
+$paragraph-font-size: 16px;
+$link-font-size : 16px;
+
+
+/* Fonts */
+$brand-font: "Open Sans", Helvetica, Arial;
+$paragraph-font: "Open Sans", Helvetica, Arial;
+$font-light: 300;
+$font-normal: 400;
+$font-semibold: 500;
+$font-bold: 700;
+
+/*Links*/
+
+a {
+  color: $links-color;
+  text-decoration: none;
+  font-size: $link-font-size;
+  margin: 5px 0;
+}
+
+a:hover {
+  color: $link-color-hover;
+}
+
+/*Paragraphs*/
+
+h1, h2, h3, h4, h5, h6, li {
+  color: $paragraph-color;
+}
+
+p{
+  color: $brand-main-color;
+}
