@@ -2,12 +2,22 @@
 
 $paragraph-color: #979797;
 $brand-main-color: #333333;
+
 $links-color : #56819f;
 $link-color-hover : #ffa200;
 
+$button-color-org: #f58220;
+$button-color-org-hover: #ffa200;
+$button-color-disabled: #979797;
+$text-in-button: #f5f5f2;
+
+$background-sidebar: #333333;
+
+
 /* Font sizes */
-$paragraph-font-size: 16px;
-$link-font-size : 16px;
+$title-section-size: 14px;
+$paragraph-font-size: 12px;
+$link-font-size : 14px;
 
 
 /* Fonts */
@@ -18,25 +28,6 @@ $font-normal: 400;
 $font-semibold: 500;
 $font-bold: 700;
 
-/*Links*/
+/*Transition*/
 
-a {
-  color: $links-color;
-  text-decoration: none;
-  font-size: $link-font-size;
-  margin: 5px 0;
-}
-
-a:hover {
-  color: $link-color-hover;
-}
-
-/*Paragraphs*/
-
-h1, h2, h3, h4, h5, h6, li {
-  color: $paragraph-color;
-}
-
-p{
-  color: $brand-main-color;
-}
+$transition: 0.4s all;

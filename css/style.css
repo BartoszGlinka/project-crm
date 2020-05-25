@@ -1,27 +1,7 @@
 /* Colors */
 /* Font sizes */
 /* Fonts */
-/*Links*/
-a {
-  color: #56819f;
-  text-decoration: none;
-  font-size: 16px;
-  margin: 5px 0;
-}
-
-a:hover {
-  color: #ffa200;
-}
-
-/*Paragraphs*/
-h1, h2, h3, h4, h5, h6, li {
-  color: #979797;
-}
-
-p {
-  color: #333333;
-}
-
+/*Transition*/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -359,5 +339,150 @@ template {
  */
 [hidden] {
   display: none;
+}
+
+/*Paragraphs*/
+h1, h2, h3, h4, h5, h6, li {
+  color: #979797;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-family: "Open Sans", Helvetica, Arial;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+p {
+  color: #333333;
+}
+
+/*Buttons*/
+button {
+  color: #f5f5f2;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 2px;
+  border: 0;
+  margin: 5px;
+  outline: none;
+}
+
+button:hover {
+  transform: scale(1.05, 1.07);
+  transition: 0.4s all;
+}
+
+.active-button {
+  background-color: #f58220;
+}
+
+.active-button:hover {
+  background-color: #ffa200;
+}
+
+.disable-button {
+  background-color: #979797;
+}
+
+.disable-button:hover {
+  transform: none;
+}
+
+/*Links*/
+a {
+  color: #56819f;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+a:hover {
+  color: #ffa200;
+}
+
+/*Grid */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 20px auto 0;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  height: 100%;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: (1fr)[8];
+      grid-template-rows: repeat(8, 1fr);
+  grid-gap: 10px;
+  padding: 8px;
+  grid-template-areas: " box-2 box-1 box-1 box-1 box-1 box-1 box-1" " box-2 box-3 box-3 box-3 box-3 box-3 box-3" " box-2 box-3 box-3 box-3 box-3 box-3 box-3" " box-2 box-3 box-3 box-3 box-3 box-3 box-3" " box-2 box-4 box-4 box-4 box-4 box-4 box-4" " box-2 box-4 box-4 box-4 box-4 box-4 box-4" " box-2 box-4 box-4 box-4 box-4 box-4 box-4" " box-2 box-4 box-4 box-4 box-4 box-4 box-4";
+}
+
+.grid-item {
+  color: black;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.grid-item-1 {
+  grid-area: box-1;
+}
+
+.grid-item-2 {
+  grid-area: box-2;
+  background-color: #333333;
+}
+
+.grid-item-3 {
+  grid-area: box-3;
+  min-height: 250px;
+}
+
+.grid-item-4 {
+  grid-area: box-4;
+  min-height: 250px;
+}
+
+/*Sidebar*/
+.sidebar {
+  position: relative;
+}
+
+.sidebar ul p {
+  color: #979797;
+}
+
+.sidebar li {
+  list-style: none;
+}
+
+.sidebar li img {
+  max-height: 30px;
+  max-width: 30px;
+  color: #979797;
+}
+
+.sidebar li a {
+  color: #979797;
+}
+
+.sidebar li a:hover {
+  color: #56819f;
+}
+
+/*Logo*/
+.container-logo {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sidebar-logo {
+  font-size: 12px;
 }
 /*# sourceMappingURL=style.css.map */

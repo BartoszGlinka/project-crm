@@ -1,0 +1,148 @@
+/*Paragraphs*/
+
+h1, h2, h3, h4, h5, h6, li {
+  color: $paragraph-color;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-family: $brand-font;
+  font-weight: $font-normal;
+  font-size: $title-section-size;
+}
+
+p {
+  color: $brand-main-color;
+}
+
+/*Buttons*/
+
+button {
+  color: $text-in-button;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 2px;
+  border: 0;
+  margin: 5px;
+  outline: none;
+}
+
+button:hover {
+  transform: scale(1.05,1.07);
+  transition: $transition;
+}
+
+.active-button {
+  background-color: $button-color-org;
+}
+
+.active-button:hover {
+  background-color: $button-color-org-hover;
+}
+
+.disable-button {
+  background-color: $button-color-disabled;
+}
+
+.disable-button:hover {
+  transform: none;
+}
+
+/*Links*/
+
+a {
+  color: $links-color;
+  text-decoration: none;
+  font-size: $link-font-size;
+  margin: 5px 0;
+}
+
+a:hover {
+  color: $link-color-hover;
+}
+
+/*Grid */
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 20px auto 0; 
+}
+
+.grid {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(8,1fr);
+  grid-gap: 10px;
+  padding: 8px;
+  grid-template-areas:
+    " box-2 box-1 box-1 box-1 box-1 box-1 box-1"
+    " box-2 box-3 box-3 box-3 box-3 box-3 box-3"
+    " box-2 box-3 box-3 box-3 box-3 box-3 box-3"
+    " box-2 box-3 box-3 box-3 box-3 box-3 box-3"
+    " box-2 box-4 box-4 box-4 box-4 box-4 box-4"
+    " box-2 box-4 box-4 box-4 box-4 box-4 box-4"
+    " box-2 box-4 box-4 box-4 box-4 box-4 box-4"
+    " box-2 box-4 box-4 box-4 box-4 box-4 box-4";
+  }
+
+.grid-item {  
+  color: black; 
+  display: flex;  
+  text-align: center; 
+  font-weight: bold; 
+  font-size: 2rem;
+  
+}
+
+.grid-item-1 {
+  grid-area: box-1;
+}
+
+.grid-item-2 {
+  grid-area: box-2;
+  background-color: $brand-main-color;
+}
+
+.grid-item-3 {
+  grid-area: box-3;
+  min-height: 250px;
+}
+
+.grid-item-4 {
+  grid-area: box-4;
+  min-height: 250px;
+}
+
+/*Sidebar*/
+.sidebar {
+  position: relative;
+}
+
+.sidebar ul p {
+  color: $paragraph-color;
+}
+.sidebar li {
+  list-style: none;
+}
+
+.sidebar li img {
+  max-height: 30px;
+  max-width: 30px;
+  color: $paragraph-color;
+}
+.sidebar li a {
+  color: $paragraph-color;
+}
+.sidebar li a:hover{
+  color: $links-color;
+}
+/*Logo*/
+.container-logo {
+  display: flex;
+}
+
+.sidebar-logo {
+  font-size: $paragraph-font-size;
+}
