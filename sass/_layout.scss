@@ -1,7 +1,19 @@
-/*Paragraphs*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
+/*Paragraphs*/
 h1, h2, h3, h4, h5, h6, li {
   color: $paragraph-color;
+}
+
+h1 {
+  font-family: $paragraph-font;
+  font-weight: $font-normal;
+  text-transform: uppercase;
+  font-size: $h1-size;
+  margin-bottom: 20px;
+  border-bottom: $border-botom;
 }
 
 h2 {
@@ -11,13 +23,18 @@ h2 {
   font-size: $title-section-size;
 }
 
+h3 {
+  font-size: $h3-size;
+  font-weight: $font-bold;
+  font-family: $brand-font;
+}
+
 p {
   color: $brand-main-color;
 }
 
 /*Buttons*/
-
-button {
+.button-active {
   color: $text-in-button;
   text-decoration: none;
   overflow: hidden;
@@ -25,32 +42,33 @@ button {
   border: 0;
   margin: 5px;
   outline: none;
+  cursor: pointer;
 }
 
-button:hover {
+.button-active:hover {
   transform: scale(1.05,1.07);
   transition: $transition;
 }
 
-.active-button {
+.button-btn-active {
   background-color: $button-color-org;
 }
 
-.active-button:hover {
+.button-btn-active:hover {
   background-color: $button-color-org-hover;
 }
 
-.disable-button {
+.disable-.button-btn{
   background-color: $button-color-disabled;
 }
 
-.disable-button:hover {
+.disable-.button-btn:hover {
   transform: none;
 }
 
 /*Links*/
-
 a {
+  font-family: $paragraph-font;
   color: $links-color;
   text-decoration: none;
   font-size: $link-font-size;
@@ -61,88 +79,393 @@ a:hover {
   color: $link-color-hover;
 }
 
-/*Grid */
+/*Layout*/
+body {
+  background-color: $body-bck-color;
+}
 
-.container {
+/*Topbar*/
+.topbar {
+  display: flex;
+  min-height: 60px;
   width: 100%;
-  min-height: 100vh;
-  margin: 20px auto 0; 
+  background-color: $topbar-bck-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  border-bottom: $border-botom;
+  justify-content: flex-end;
 }
 
-.grid {
-  display: grid;
-  height: 100%;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: repeat(8,1fr);
-  grid-gap: 10px;
-  padding: 8px;
-  grid-template-areas:
-    " box-2 box-1 box-1 box-1 box-1 box-1 box-1"
-    " box-2 box-3 box-3 box-3 box-3 box-3 box-3"
-    " box-2 box-3 box-3 box-3 box-3 box-3 box-3"
-    " box-2 box-3 box-3 box-3 box-3 box-3 box-3"
-    " box-2 box-4 box-4 box-4 box-4 box-4 box-4"
-    " box-2 box-4 box-4 box-4 box-4 box-4 box-4"
-    " box-2 box-4 box-4 box-4 box-4 box-4 box-4"
-    " box-2 box-4 box-4 box-4 box-4 box-4 box-4";
-  }
-
-.grid-item {  
-  color: black; 
-  display: flex;  
-  text-align: center; 
-  font-weight: bold; 
-  font-size: 2rem;
-  
+.topbar div {
+  border-left: $border-botom;
+  min-width: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.grid-item-1 {
-  grid-area: box-1;
+.summary svg:last-child {
+  min-height: 10px;
+  min-width: 10px;
 }
 
-.grid-item-2 {
-  grid-area: box-2;
-  background-color: $brand-main-color;
+.topbar svg {
+  min-height: 20px;
+  min-width: 20px;
+  fill: $paragraph-color;
+  margin: 10px 10px;
 }
 
-.grid-item-3 {
-  grid-area: box-3;
-  min-height: 250px;
-}
-
-.grid-item-4 {
-  grid-area: box-4;
-  min-height: 250px;
+.topbar a {
+  display: inline;
+  margin-right: 10px;
 }
 
 /*Sidebar*/
+
 .sidebar {
-  position: relative;
-}
-
-.sidebar ul p {
-  color: $paragraph-color;
-}
-.sidebar li {
-  list-style: none;
-}
-
-.sidebar li img {
-  max-height: 30px;
-  max-width: 30px;
-  color: $paragraph-color;
-}
-.sidebar li a {
-  color: $paragraph-color;
-}
-.sidebar li a:hover{
-  color: $links-color;
-}
-/*Logo*/
-.container-logo {
+  min-width: 200px;
+  min-height: 100vh;
+  background-color: $sidebar-bck-color;
+  position: fixed;
   display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  transform: translateX(-200px);
+}
+
+.sidebar--active {
+  transform: translateX(0px);
 }
 
 .sidebar-logo {
-  font-size: $paragraph-font-size;
+  font-size: $logo-size;
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: $font-bold;
+  color: white;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  padding-left: 20px; 
 }
+
+.sidebar ul {
+  padding-left: 10px;
+  width: 100%;
+}
+
+.sidebar li {
+  list-style: none;
+  margin: 10px 0;
+  min-height: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
+  
+}
+
+.sidebar a {
+  color: $paragraph-color;
+  display: block;
+  margin-left: 10px;
+}
+
+.sidebar svg {
+  min-height: 20px;
+  min-width: 20px;
+  max-width: 24px;
+  max-height: 24px;
+  fill: $paragraph-color;
+}
+
+.sidebar li:hover {
+  background-color: #282828;
+  border-left: 2px solid $link-color-hover;
+}
+
+.sidebar li:hover a,
+.sidebar li:hover svg {
+  color: $light-color;
+  fill: $light-color;
+}
+
+/*Hamburger Menu*/
+.hamburger, .sidebar {
+  transition: transform .3s .1s ease-in-out;
+}
+
+.hamburger {
+  padding: 0;
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  top: 24px;
+  left: 140px;
+  transform: translateX(200px);
+}
+
+.hamburger-active {
+  transform: translateX(-200px);
+}
+
+.hamburger__box {
+  width: 26px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger__inner {
+  @include hamburger-line;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color .1s .1s ease-in-out;
+}
+
+.hamburger__inner::before,
+.hamburger__inner::after {
+  @include hamburger-line;
+  
+  content: '';
+  left: 0;
+  transition: transform .3s .2s  ease-in-out;
+}
+
+.hamburger__inner::before {
+  top: -10px;
+}
+
+.hamburger__inner::after {
+  top: 10px;
+}
+
+.hamburger--active .hamburger__inner {
+  background-color: transparent;
+}
+
+.hamburger--active .hamburger__inner::before {
+  transform: translateY(10px)rotate(45deg);
+
+}
+
+.hamburger--active .hamburger__inner::after {
+  transform: translateY(-10px)rotate(-45deg);
+}
+
+/*Content*/
+.content {
+  margin-left: 205px;
+  margin-top: 65px;
+  padding: 10px;
+}
+
+.sub-general-statistic {
+  background-color: $topbar-bck-color;
+  width: 100%;
+  min-height: 250px;
+  margin-bottom: 10px;
+}
+
+.sub-links {
+  background-color: $topbar-bck-color;
+  width: 100%;
+  min-height: 250px;
+}
+
+/*Content*/
+.content h1 {
+  width: 100%;
+  padding: 10px 0 10px 20px;
+}
+
+/*General Statistic*/
+.sub-general-statistic .wrapper {
+  background-color: transparent;
+  border: $border-botom;
+  border-radius: 2px;
+  display: block;
+  margin: 20px 10px;
+}
+
+.sub-general-statistic div input {
+  border: none;
+  max-width: 140px;
+  min-height: 40px;
+}
+
+.sub-general-statistic div input:first-child {
+  border-right: $border-botom;
+}
+
+.wrapper div {
+  margin: 0 20px;
+}
+
+.sub-general-statistic .wrapper {
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  border: none;
+  padding: 0;
+  margin : auto 0;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: $border-botom;
+}
+
+.button-active {
+  background-color: $button-color-org;
+  max-height: 50px;
+  margin: 0;
+  display: block;
+}
+
+.button-active svg {
+  min-height: 28px;
+  min-width: 30px;
+  fill: $light-color;
+}
+
+.statistic-data {
+  border: 0px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.statistic-data .wrapper{
+  border: 0px;
+}
+
+.statistic-data div {
+  display: flex;
+  flex-direction: row;
+}
+
+.statistic-data div div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.statistic-data div div div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 200px;
+  border-bottom: $border-botom;
+}
+
+.statistic-data-graph {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+.statistic-data-graph .wrapper {
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+}
+.statistic-data-graph .wrapper img {
+  display: block;
+  width: 100%;
+}
+
+/*Links*/
+.sub-links .wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.sub-links button {
+  min-width: 120px;
+  min-height: 40px;
+}
+
+.sub-links ul {
+  padding-left: 10px;
+  width: 100%;
+}
+
+.sub-links li {
+  list-style: none;
+  min-height: 40px;
+  padding: 10px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  border-bottom: $border-botom; 
+}
+.sub-links h3 {
+  min-width: 100px;
+}
+
+.sub-links li .button-wrapper{
+  min-width: 50px;
+  height: auto;
+  
+}
+
+.sub-links li div{
+  min-width: 200px;
+}
+
+.sub-links li div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-wrapper svg {
+  height: 22px;
+  width: 22px;
+  fill: pink;
+  margin-left: 20px;
+  fill: $paragraph-color;
+  visibility: hidden;
+}
+
+.sub-links li:first-child {
+  border-top: $border-botom;
+}
+
+.sub-links li:hover {
+  background-color: $links-content-bck-color;
+}
+
+.sub-links li:hover svg {
+  visibility: visible;
+}
+
+.sub-links li:hover svg:hover {
+  fill: $link-color-hover;
+  cursor: pointer;
+}
+
