@@ -1,0 +1,43 @@
+/*Topbar*/
+.topbar {
+  display: flex;
+  min-height: 60px;
+  width: 100%;
+  background-color: $topbar-bck-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  border-bottom: $border-botom;
+  justify-content: flex-end;
+}
+
+.topbar div {
+  border-left: $border-botom;
+  min-width: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.summary .svg:last-child {
+  min-height: 10px;
+  min-width: 10px;
+}
+
+.topbar .svg {
+  min-height: 20px;
+  min-width: 20px;
+  color: $paragraph-color;
+  margin: 10px 10px;
+}
+
+.topbar a {
+  display: inline;
+  margin-right: 10px;
+}
+
+/*Sidebar*/
+.copie-of-sidebar {
+  display: none;
+}

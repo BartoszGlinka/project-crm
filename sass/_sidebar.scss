@@ -1,0 +1,106 @@
+/*Sidebar*/
+.copie-of-sidebar {
+  display: none;
+}
+
+.sidebar {
+  min-width: 200px;
+  min-height: 100vh;
+  background-color: $sidebar-bck-color;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  transform: translateX(-200px);
+}
+
+.sidebar--active {
+  transform: translateX(0px);
+}
+
+.sidebar-logo {
+  font-size: $logo-size;
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: $font-bold;
+  color: white;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  padding-left: 20px;
+  border: none;
+}
+
+.sidebar ul {
+  padding-left: 10px;
+  width: 100%;
+}
+
+.sidebar li {
+  list-style: none;
+  margin: 10px 0;
+  min-height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.sidebar a {
+  color: $paragraph-color;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin-left: 5px;
+}
+
+.sidebar .svg {
+  min-height: 20px;
+  min-width: 20px;
+  max-width: 24px;
+  max-height: 24px;
+  color: $paragraph-color;
+}
+
+.sidebar li:hover {
+  background-color: #282828;
+  border-left: 2px solid $link-color-hover;
+}
+
+.sidebar li:hover a,
+.sidebar li:hover .svg {
+  color: $light-color;
+}
+
+/*Avatar*/
+.avatar {
+  border-bottom: $border-avater;
+  border-top: $border-avater;
+  padding-left: 20px;
+}
+
+.avatar h2 {
+  font-size: 14px;
+}
+
+.avatar div {
+  display: flex;
+  //align-items: center;
+  margin-bottom: 10px;
+}
+
+.avatar a {
+  width: 80%;
+}
+
+.user-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  background-image: url(../images/user-img.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

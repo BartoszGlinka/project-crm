@@ -7,6 +7,7 @@ $light-color: #ffffff;
 
 $topbar-bck-color: #ffffff;
 $topbar-border-color: #e3e3e3;
+$avatar-border-color: #333333;
 $sidebar-bck-color: #191919;
 $links-content-bck-color: #f1f3f3;
 
@@ -22,7 +23,7 @@ $text-in-button: #f5f5f2;
 /* Font sizes */
 $title-section-size: 14px;
 $h1-size: 18px;
-$h3-size: 16px;
+$h2-size: 16px;
 $logo-size: 24px;
 $paragraph-font-size: 12px;
 $link-font-size : 12px;
@@ -42,5 +43,5 @@ $font-bold: 700;
 $transition: 0.4s all;
 
 /*Boreder*/
-
+$border-avater: 1px solid $avatar-border-color;
 $border-botom: 1px solid $topbar-border-color;
